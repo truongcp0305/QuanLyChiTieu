@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quan_ly_chi_tieu/screens/user/user_detail.dart';
 
+import '../bar_char_test.dart';
+import '../home_screen/home.dart';
+
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -16,10 +19,10 @@ class _NavigationState extends State<Navigation> {
   void initState(){
     _pages =[
       {
-        'page' : const Center(child: Text('Home'))
+        'page' : const Home()
       },
       {
-        'page' : const Center(child: Text('Chart'))
+        'page' : const BarChartSample7()
       },
       {
         'page' : const UserDetail()

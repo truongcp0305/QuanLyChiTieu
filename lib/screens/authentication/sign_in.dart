@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:quan_ly_chi_tieu/screens/authentication/register.dart';
 
 import '../../services/auth.dart';
+import '../navigation_bar/navigation_bar.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -86,6 +87,7 @@ class _SignInState extends State<SignIn> {
                   print("Tai khoan hoac mat khau khong dung");
                   alert.value = 'Username or password incorrect';
                 }else{
+                  Get.off(()=> const Navigation());
                   alert.value ='';
                 }
               },
