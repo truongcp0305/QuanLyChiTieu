@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:quan_ly_chi_tieu/screens/bar_char_test.dart';
+
+import '../add_screen/add_screen.dart';
+import '../add_screen/category_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,7 +17,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Get.to(()=>const Category());
+        },
         backgroundColor: Colors.green,
         child: const Icon(Icons.add),
       ),
@@ -59,7 +65,7 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'My wallet (wallet flat icon)',
+                    'Ví của tôi (wallet flat icon)',
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
                   ),
                   Container(
@@ -99,7 +105,7 @@ class _HomeState extends State<Home> {
             const Align(
               alignment: Alignment(-0.9, 0),
               child: Text(
-                'Bao cao chi tieu',
+                'Báo cáo chi tiêu',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 15,
@@ -119,7 +125,6 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   BarChartSample7(),
-                  Text('data')
                 ],
               ),
             )

@@ -8,8 +8,8 @@ class BarChartSample7 extends StatefulWidget {
 
   static const shadowColor = Color(0xFFCCCCCC);
   static const dataList = [
-    _BarData(Color(0xFFecb206), 18, 18),
-    _BarData(Color(0xFFa8bd1a), 17, 8),
+    _BarData(Color(0xFFecb206), 10),
+    _BarData(Color(0xFFa8bd1a), 17),
     // _BarData(Color(0xFF17987b), 10, 15),
     // _BarData(Color(0xFFb87d46), 2.5, 5),
     // _BarData(Color(0xFF295ab5), 2, 2.5),
@@ -124,7 +124,6 @@ class _BarChartSample7State extends State<BarChartSample7> {
                       data.value,
                     );
                   }).toList(),
-                  //maxY: 20,
                   barTouchData: BarTouchData(
                     enabled: true,
                     handleBuiltInTouches: false,
@@ -171,6 +170,24 @@ class _BarChartSample7State extends State<BarChartSample7> {
                 ),
               ),
             ),
+            Row(
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(left: 30, top: 7),
+                  child: Text(
+                    "Tuần trước",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 7, left: 71),
+                  child: Text(
+                    "Tuần này",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500 ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
@@ -179,10 +196,10 @@ class _BarChartSample7State extends State<BarChartSample7> {
 }
 
 class _BarData {
-  const _BarData(this.color, this.value, this.shadowValue);
+  const _BarData(this.color, this.value);
   final Color color;
   final double value;
-  final double shadowValue;
+  //final double shadowValue;
 }
 
 class _IconWidget extends ImplicitlyAnimatedWidget {
